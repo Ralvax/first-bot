@@ -30,7 +30,7 @@ async def on_message(message):
         await message.channel.send("Hi!")
 
 
-@commands.command()
+@client.command()
 async def google(ctx):
     search_content = ""
     text = str(ctx.message.content)
