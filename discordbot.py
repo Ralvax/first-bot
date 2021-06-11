@@ -25,6 +25,7 @@ async def on_ready():
 async def on_message(message):
     if message.author == client.user:
         return
+    await client.process_commands(message)
 
     if message.content == "hi":
         await message.channel.send("Hi!")
