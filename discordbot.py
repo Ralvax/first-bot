@@ -42,7 +42,7 @@ async def google(ctx):
         await ctx.send(n)
 
 
-class meme(commands.Cog):
+class meme(commands.command):
     def __init__(self, client):
         self.client = client
 
