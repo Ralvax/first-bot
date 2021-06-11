@@ -42,9 +42,28 @@ async def google(ctx):
         await ctx.send(n)
 
 
-@commands.command()
-async def meme(ctx):
-    pass
+class meme(commands.Cog):
+    def __init__(self, client):
+        self.client = client
+
+    @commands.command()
+    async def memes(self, ctx):
+        memes = os.listdir("./desktop/temporary")
+
+        if len(memes) == 1:
+            return
+    while meming:
+        meme = random.choice(memes)
+        meme = "./desktop/temporary" + meme
+        memeList = meme.split(".")
+
+        if os.path.getsize(meme) < 8388608 and memeList[len(memeList)- 1] != "md":
+            meming = False
+
+        else:
+            print ("File is over 8mb")
+
+        await ctx.message.channel.send(file = discord.File(meme)) # This one
 
 
 client.run("token")
